@@ -10,6 +10,10 @@ import ProductList from "./components/ProductList.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import PurpleSection from "./components/PurpleSection.jsx";
 import Footer from "./components/Footer.jsx";
+import FAQ from "./pages/FAQ.jsx";
+import About from "./pages/About.jsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+import TermsOfService from "./pages/TermsOfService.jsx";
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -123,6 +127,10 @@ export default function App() {
           path="/product/:id"
           element={<ProductDetail addToCart={addToCart} />}
         />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
       </Routes>
     </>
   );

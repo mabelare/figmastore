@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="footer-animate text-black">
@@ -29,30 +31,30 @@ export default function Footer() {
 
           <div className="flex gap-12 relative">
             <div className="space-y-4 text-base flex-1">
-              <a
-                href="https://store.figma.com/pages/faq"
+              <Link
+                to="/faq"
                 className="block font-semibold hover:underline"
               >
                 FAQ
-              </a>
-              <a
-                href="https://store.figma.com/pages/about#contact"
+              </Link>
+              <Link
+                to="/about#contact"
                 className="block font-semibold hover:underline"
               >
                 Contact us
-              </a>
-              <a
-                href="https://store.figma.com/pages/privacypolicy"
+              </Link>
+              <Link
+                to="/privacy-policy"
                 className="block font-semibold hover:underline"
               >
                 Privacy policy
-              </a>
-              <a
-                href="https://store.figma.com/pages/terms-of-service"
+              </Link>
+              <Link
+                to="/terms-of-service"
                 className="block font-semibold hover:underline"
               >
                 Terms of service
-              </a>
+              </Link>
               <a
                 href="https://www.figma.com/"
                 className="block font-semibold hover:underline flex items-center gap-2"
