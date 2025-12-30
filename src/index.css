@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(110%);
+  }
+}
+
+.animate-slide {
+  animation: slide 12s linear infinite;
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.hero-wave {
+  border-bottom-left-radius: 50% 12%;
+  border-bottom-right-radius: 50% 12%;
+}
+
+.image-shape {
+  width: 280px;
+  height: 280px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: white;
+}
+
+.image-shape.m {
+  border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+}
+
+.image-shape.w {
+  border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%;
+}
+.image-shape.x {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.image-shape.cloud {
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.image-shape.normal {
+  border-radius: 20px;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
