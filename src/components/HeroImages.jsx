@@ -30,7 +30,6 @@ export default function HeroImages() {
     const container = scrollRef.current;
     if (!container) return;
 
-    // Wait for layout then start in the middle set
     requestAnimationFrame(() => {
       const scrollWidth = container.scrollWidth / 3;
       container.scrollLeft = scrollWidth;
@@ -40,12 +39,9 @@ export default function HeroImages() {
       const scrollWidth = container.scrollWidth / 3;
       const scrollLeft = container.scrollLeft;
 
-      // when user reaches the right end → jump back
       if (scrollLeft >= scrollWidth * 2 - 10) {
         container.scrollLeft = scrollLeft - scrollWidth;
-      }
-      // when user reaches the left end → jump forward
-      else if (scrollLeft <= 10) {
+      } else if (scrollLeft <= 10) {
         container.scrollLeft = scrollLeft + scrollWidth;
       }
     };
@@ -61,7 +57,14 @@ export default function HeroImages() {
     >
       <div className="flex gap-4 px-10 h-full items-center">
         {loopImages.map((img, index) => (
-          <div key={index} className={`image-shape ${img.shape}`}>
+          <div
+            key={index}
+            className={`image-shape ${img.shape}`}
+            style={{
+              width: "clamp(200px, 20vw, 400px)",
+              height: "clamp(200px, 20vw, 400px)",
+            }}
+          >
             <img
               src={img.src}
               alt=""

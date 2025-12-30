@@ -1,4 +1,17 @@
 @import "tailwindcss";
+
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  overflow-y: hidden;
+}
+
 @keyframes slide {
   0% {
     transform: translateX(-100%);
@@ -71,4 +84,64 @@
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scroll-text {
+  animation: scroll 8s linear infinite;
+  width: 200%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+@keyframes footerColor {
+  0% {
+    background-color: #15803d;
+  }
+  25% {
+    background-color: #7c3aed;
+  }
+  50% {
+    background-color: #0891b2;
+  }
+  75% {
+    background-color: #dc2626;
+  }
+  100% {
+    background-color: #15803d;
+  }
+}
+
+.footer-animate {
+  animation: footerColor 20s ease-in-out infinite;
+}
+
+@keyframes crossColor {
+  0% {
+    background-color: #a78bfa;
+  }
+  25% {
+    background-color: #15803d;
+  }
+  50% {
+    background-color: #dc2626;
+  }
+  75% {
+    background-color: #0891b2;
+  }
+  100% {
+    background-color: #a78bfa;
+  }
+}
+
+.cross-animate {
+  animation: crossColor 20s ease-in-out infinite;
 }

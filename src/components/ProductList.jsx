@@ -2,20 +2,11 @@ import { Link } from "react-router-dom";
 import Data from "../Data.js";
 
 export default function ProductList() {
-  const fullWidthProducts = [12, 14, 15]; // Daydreamer, Everywhere tee, Plushie
-
   return (
-    <section className="product-section p-6">
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+    <section className="product-section p-6 md:p-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
         {Data.map((product) => (
-          <div
-            key={product.id}
-            className={`rounded-2xl overflow-hidden shadow ${
-              fullWidthProducts.includes(product.id)
-                ? "col-span-2 md:col-span-3"
-                : ""
-            }`}
-          >
+          <div key={product.id} className="rounded-2xl overflow-hidden shadow">
             <Link
               to={`/product/${product.id}`}
               onClick={() =>
@@ -25,7 +16,7 @@ export default function ProductList() {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-56 object-cover block"
+                className="w-full h-56 md:h-72 lg:h-80 object-cover block"
               />
             </Link>
 

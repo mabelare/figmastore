@@ -9,6 +9,7 @@ import Hero from "./components/Hero.jsx";
 import ProductList from "./components/ProductList.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import PurpleSection from "./components/PurpleSection.jsx";
+import Footer from "./components/Footer.jsx";
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,6 +20,10 @@ export default function App() {
 
   function addToCart(product) {
     setCart((prev) => [...prev, product]);
+  }
+
+  function removeFromCart(index) {
+    setCart((prev) => prev.filter((_, i) => i !== index));
   }
 
   const location = useLocation();
@@ -95,7 +100,13 @@ export default function App() {
       {accountModalOpen && (
         <AccountModal onClose={() => setAccountModalOpen(false)} />
       )}
-      {cartOpen && <Cart cart={cart} onClose={() => setCartOpen(false)} />}
+      {cartOpen && (
+        <Cart
+          cart={cart}
+          onClose={() => setCartOpen(false)}
+          removeFromCart={removeFromCart}
+        />
+      )}
       <Routes>
         <Route
           path="/"
@@ -104,6 +115,7 @@ export default function App() {
               <Hero />
               <ProductList />
               <PurpleSection />
+              <Footer />
             </>
           }
         />

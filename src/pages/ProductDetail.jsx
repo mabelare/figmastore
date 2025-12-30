@@ -123,8 +123,6 @@ export default function ProductDetail({ addToCart }) {
           </button>
         </div>
       </div>
-
-      {/* Related products removed on product detail page per request */}
     </section>
   );
 }
